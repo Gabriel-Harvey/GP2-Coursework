@@ -13,18 +13,18 @@ enum class GameState { PLAY, EXIT };
 class MainGame
 {
 public:
-	MainGame();
-	~MainGame();
+	MainGame(); //Creates pointers and sets the game state.
+	~MainGame(); //Destructor.
 
-	void run();
+	void run();  //Calls the constructors for initailising the program and starting the gameloop.
 
 private:
 
-	void initiliseSystems();
-	void processGameInput();
-	void runGameLoop();
-	void drawGameWindow();
-	bool objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad, string names);
+	void initiliseSystems(); //Initilises all component parts of the program.
+	void processGameInput(); //Processes all game and user input.
+	void runGameLoop(); //While game is active, will loop all game components.
+	void drawGameWindow(); //Draws the meshes to the display and shows translations.
+	bool objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad, string names); //Manges collisions between meshes and updates the console.
 	
 	Display _Display;
 	GameState _currentGameState;
@@ -38,8 +38,8 @@ private:
 	SDL_Event event;
 
 	float counter;
-	float x = -15;
-	float y = 0.0f;
+	float x = -15; //Moves the dog mesh in X direction.
+	float y = 0.0f; //Moves the dog mesh in Y direction.
 
 	//Checks for if the movement keys are being pressed. 
 	bool key_left = false;

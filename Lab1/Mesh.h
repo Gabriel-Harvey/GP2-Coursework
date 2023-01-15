@@ -7,6 +7,7 @@
 struct Vertex
 {
 public:
+	//Sets mesh/vertex data.
 	Vertex(const glm::vec3& position, const glm::vec2& texCoordinate)
 	{
 		this->position = position;
@@ -14,6 +15,7 @@ public:
 		this->normal = normal;
 	}
 
+	//Grabs mesh/vertex data.
 	glm::vec3* getPosition() { return &position; }
 	glm::vec2* getTextCoordinate() { return &texCoordinate; }
 	glm::vec3* GetNormal() { return &normal; }
@@ -28,19 +30,21 @@ private:
 struct Sphere
 {
 public:
-
+	//Constructor.
 	Sphere()
 	{
 	}
 
-	glm::vec3 GetSpherePosition() { return position; }
-	float GetSphereRadius() { return sphereRad; }
+	glm::vec3 GetSpherePosition() { return position; } //Grabs sphere position.
+	float GetSphereRadius() { return sphereRad; } //Grabs Sphere radius.
 
+	//Sets sphere position to given vec3.
 	void SetSpherePosition(glm::vec3 pos)
 	{
 		this->position = pos;
 	}
 
+	//Sets sphere radius to given float.
 	void SetSphereRadius(float rad)
 	{
 		this->sphereRad = rad;
@@ -58,14 +62,14 @@ public:
 	Mesh();
 	~Mesh();
 
-	void drawMesh();
-	void initialise(Vertex* vertices, unsigned int verticesNum, unsigned int* indices, unsigned int indicesNum);
-	void loadModel(const std::string& filename);
-	void initialiseModel(const IndexedModel& model);
+	void drawMesh(); //Draws the mesh to display.
+	void initialize(Vertex* vertices, unsigned int verticesNum, unsigned int* indices, unsigned int indicesNum); //Initialises the models texture cooridnates and position.
+	void loadModel(const std::string& filename); //Loads the given model.
+	void initializeModel(const IndexedModel& model); //Creates the buffers for the models and stores them on the GPU.
+	void updateSphereData(glm::vec3 pos, float radius); //Keeps the Collision Sphere bound to the mesh data.
 
-	void updateSphereData(glm::vec3 pos, float radius);
-	glm::vec3 getSpherePos() { return mSphere.GetSpherePosition(); }
-	float getSphereRad() { return mSphere.GetSphereRadius(); }
+	glm::vec3 getSpherePos() { return mSphere.GetSpherePosition(); } //Grabs sphere position.
+	float getSphereRad() { return mSphere.GetSphereRadius(); } //Grabs sphere radius.
 
 private:
 

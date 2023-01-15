@@ -3,6 +3,7 @@
 #include <cassert>
 #include <iostream>
 
+//Stores and saves image data to texture. 
 Texture::Texture(const std::string& fileName)
 {
 	//Width, heigh and number of componenets of the image supplied.

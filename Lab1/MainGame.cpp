@@ -124,6 +124,7 @@ void MainGame::processGameInput() //Processes all game and user input.
 	if (key_down) { y -= 0.1f; }
 }
 
+//Draws the meshes to the display and shows translations.
 void MainGame::drawGameWindow() 
 {
 	_Display.clearGameDisplay(0.0f, 0.0f, 0.0f, 1.0f);

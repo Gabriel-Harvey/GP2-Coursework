@@ -7,13 +7,13 @@
 class GameAudio
 {
 	public:
-		GameAudio();
-		~GameAudio();
+		GameAudio(); //Sets audio data. 
+		~GameAudio(); //SDL quits.
 
-		void newSoundEffect(const char* path);
-		void newAudioTrack(const char* path);
-		void playSoundEffect(const int which) const;
-		void playAudioTrack();
+		void newSoundEffect(const char* path); //Adds a new sound effect.
+		void newAudioTrack(const char* path); //Adds a new audio track.
+		void playSoundEffect(const int which) const; //Plays the chossen sound effect.
+		void playAudioTrack(); //Plays the audio track.
 
 	private:
 		Mix_Music* bgMusic;

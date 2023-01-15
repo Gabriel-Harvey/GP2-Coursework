@@ -6,6 +6,7 @@
 struct Transform
 {
 public:
+	//Sets transform data.
 	Transform(const glm::vec3& position = glm::vec3(), const glm::vec3& rotation = glm::vec3(), const glm::vec3& scale = glm::vec3(1.0f, 1.0f, 1.0f))
 	{
 		this->position = position;
@@ -13,7 +14,7 @@ public:
 		this->scale = scale;
 	}
 
-	//Grabs the model.
+	//Grabs the model mat4 data.
 	inline glm::mat4 GrabModel() const
 	{
 		glm::mat4 posMat = glm::translate(position);

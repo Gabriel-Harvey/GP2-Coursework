@@ -5,11 +5,11 @@
 class Texture
 {
 public:
-	Texture(const std::string& fileName);
+	Texture(const std::string& fileName); //Stores and saves image data to texture. 
 
-	void BindTexture(unsigned int unit);
+	void BindTexture(unsigned int unit); //Binds the texture to the model matrix.
 
-	~Texture();
+	~Texture(); //Deletes the textures by number and address.
 
 protected:
 private:
