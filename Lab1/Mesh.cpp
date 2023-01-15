@@ -72,7 +72,7 @@ Mesh::~Mesh()
 //Draws the mesh to the screen.
 void Mesh::drawMesh()
 {
-	glBindVertexArray(vAO);
+	glBindVertexArray(vAO); //Binds vertex array VAO.
 
 	glDrawElements(GL_TRIANGLES, drawAmount, GL_UNSIGNED_INT, 0);
 
