@@ -24,7 +24,7 @@ private:
 	void processGameInput();
 	void runGameLoop();
 	void drawGameWindow();
-	bool objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad);
+	bool objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad, string names);
 	
 	Display _Display;
 	GameState _currentGameState;

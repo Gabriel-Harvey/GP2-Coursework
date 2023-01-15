@@ -53,9 +53,9 @@ void MainGame::runGameLoop() //While game is active, will loop all game componen
 		audio.playAudioTrack();
 		processGameInput();
 		drawGameWindow();
-		objectCollision(mesh1.getSpherePos(), mesh1.getSphereRad(), mesh2.getSpherePos(), mesh2.getSphereRad());
-		objectCollision(mesh2.getSpherePos(), mesh2.getSphereRad(), mesh3.getSpherePos(), mesh3.getSphereRad());
-		objectCollision(mesh1.getSpherePos(), mesh1.getSphereRad(), mesh3.getSpherePos(), mesh3.getSphereRad());
+		objectCollision(mesh1.getSpherePos(), mesh1.getSphereRad(), mesh2.getSpherePos(), mesh2.getSphereRad(), "Monkey & Apple");
+		objectCollision(mesh2.getSpherePos(), mesh2.getSphereRad(), mesh3.getSpherePos(), mesh3.getSphereRad(), "Apple & Dog");
+		objectCollision(mesh1.getSpherePos(), mesh1.getSphereRad(), mesh3.getSpherePos(), mesh3.getSphereRad(), "Dog & Monkey");
 	}
 }
 
@@ -178,13 +178,13 @@ void MainGame::drawGameWindow()
 }
 
 //Manges collisions between meshes and updates the console.
-bool MainGame::objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad)
+bool MainGame::objectCollision(glm::vec3 obj1Pos, float obj1Rad, glm::vec3 obj2Pos, float obj2Rad, string names)
 {
 	float distance = ((obj2Pos.x - obj1Pos.x) * (obj2Pos.x - obj1Pos.x) + (obj2Pos.y - obj1Pos.y) * (obj2Pos.y - obj1Pos.y) + (obj2Pos.z - obj1Pos.z) * (obj2Pos.z - obj1Pos.z));
 
 	if (distance * distance < (obj1Rad + obj2Rad))
 	{
-		cout << distance << '\n';
+		cout << "Collision Between " << names << ", Distance: " << distance << '\n';
 		return true;
 	}
 	else
